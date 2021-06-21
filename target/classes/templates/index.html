@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css">
 
-  <title>Registration</title>
+  <title>Home</title>
 </head>
 
 <body class="w3-container w3-theme-dark" style="width: 100%">
@@ -17,8 +17,9 @@
     <div class="w3-bar w3-theme w3-card w3-left-align w3-large">
       <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme"
         href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-      <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">AnimeHome</a>
+      <a th:href="@{/}" class="w3-bar-item w3-button w3-padding-large w3-white">AnimeHome</a>
       <a th:href="@{/logout}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Logout</a>
+      <a th:href="@{/teste}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">teste de atenticação</a>
     </div>
   </div>
 
@@ -42,7 +43,7 @@
 
               <!-- <button class="w3-button w3-circle w3-theme-l2 w3-right"
                 th:action="@{/{mal_id}(mal_id=${anime.mal_id})}">view</button> -->
-
+                <a style="margin-left:20px;" th:href="@{/fav(id=${anime.getTitle()})}">Detalhe</a>
               <h3><span th:text="${anime.title}"></span></h3>
               <h5> Numero de ep : <span th:text="${anime.episodes}"></span></h5>
               <h5> Avaliacao <span th:text="${anime.score}"></span></h5>

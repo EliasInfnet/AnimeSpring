@@ -14,7 +14,7 @@ public class Anime {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private int mal_id;
+    public int mal_id;
 
     private String title;
 
