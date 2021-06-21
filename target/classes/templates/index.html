@@ -11,7 +11,7 @@
   <title>Registration</title>
 </head>
 
-<body class="w3-container w3-theme-dark">
+<body class="w3-container w3-theme-dark" style="width: 100%">
   <!-- Navbar -->
   <div class="w3-top">
     <div class="w3-bar w3-theme w3-card w3-left-align w3-large">
@@ -31,11 +31,23 @@
   <!-- First Grid -->
   <div>
     <h1>Lista de animes</h1>
-    <div class="w3-row">
+    <div class="w3-row" style="width:30%">
       <div th:each="anime, stat : ${lista}">
-        <div class="w3-col w3-theme-d4 w3-container" style="width:40%">
-          <div class="w3-card-4">
-            <img th:src="${anime.image_url}" alt="Alps">
+        <div class="w3-col w3-theme-d4 w3-container " style="width: 100%">
+          <div class="w3-card-4 w3-padding-16 w3-row">
+            <div class="w3-col w3-container" style="width:40%">
+              <img th:src="${anime.image_url}">
+            </div>
+            <div class="w3-col w3-container" style="width:45%">
+
+              <!-- <button class="w3-button w3-circle w3-theme-l2 w3-right"
+                th:action="@{/{mal_id}(mal_id=${anime.mal_id})}">view</button> -->
+
+              <h3><span th:text="${anime.title}"></span></h3>
+              <h5> Numero de ep : <span th:text="${anime.episodes}"></span></h5>
+              <h5> Avaliacao <span th:text="${anime.score}"></span></h5>
+              <p><span th:text="${anime.synopsis}"></span></p>
+            </div>
           </div>
         </div>
       </div>
